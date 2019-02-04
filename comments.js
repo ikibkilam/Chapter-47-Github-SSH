@@ -2,7 +2,9 @@
 
 // Do not ever go int git folder, since there is chance it will get corrupted. Simply, use command line tools to 
 // update the repository.
-// 1. To install git: git-scm.com
+// 1. To install git: To install a git repository, I started the windows bash console. Then, I went to the directory 
+//    I wanted to install the git repository in. Then, I ran: git init. I can see the repository using: ls -a. Also,
+//    see git-scm.com.
 // 2. To install a git repository, I started the windows bash console. Then, I went to the directory I wanted to 
 //    install the git repository in. Then, I ran: git init. I can see the repository using: ls -a.
 // 3. Run: git status. This allows us to see the files in the folder, and which ones are tracked. Note, we need to
@@ -15,11 +17,12 @@
 //    I then added this file to the commits, using: git add .gitignore. Now, we should see all files/folders being tracked. 
 // 7. Last, we need to create a commit, and in this case an initial commit. The format is: git commit -m 'Message'. 
 
-
 // Chapter 47 - Github SSH.
 
-// Please see Notes.txt, for installing and running git. The basic idea is to use SSH PKI infrastructure
-// to authenticate the user and enable authorization, and hence not use passwords. We do the following:
+// For github: google: github ssh keys. Click on help.github.com/articles/generating-an-ssh-key/. Then click on Windows, 
+// and the breadcrumb, 'Generating an SSH Key'.  I should reach: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/ 
+// The basic idea is to use SSH PKI infrastructure to authenticate the user and enable authorization, and hence not use
+// passwords. We do the following:
 // 1. In the bash terminal: ls -a. This shows all the files and directories.
 // 2. Run the command in bash: ssh-keygen -t rsa -b 4096 -c 'bikimalik@hotmail.com'. This generates the
 //    public and private key pair. It prompts to store keys in a file (choose default). It says it has
@@ -40,7 +43,7 @@
 //    to continue connecting - say yes. We are done.
 // 6. We can now create a repository in github. Go to home page, and create a repository - give it a name,
 //    and choose public repository.
-// 7. Next, we push and existing repository in our desktop to github, running the command in the bash console:
+// 7. Next, we push an existing repository in our desktop to github, running the command in the bash console:
 //    git remote add origin https://github.com/ikibkilam/Chapter-47-Github-SSH.git. Note, remote lets git
 //    know which URLs we want to sychronize with. So, if we want to push to github and to heroku, we need
 //    two remotes. Here we are only pushing to github.
@@ -88,4 +91,14 @@
 // 13.We run: git status, to see what files have changed. We see that package.json and server.js are files
 //    that have changed and were being tracked. comments.js is not being tracked. We use: git -add filename,
 //    to commit the two files, package.json and server.js. I can also use the 'git add .' command to 
-//    commit all files, which is what I did.
+//    commit all files, which is what I did. Now, git status, shows the three files under, changes to be
+//    committed. Run: git commit -m "Added comments.js and updated server.js to use port on heroku".
+// 14.We run: git push, to push the committed files to github. Note, we need not specify origin, since the 
+//    origin is the remote.
+// 15.Run: heroku create. This creates a new application in the heroku platform. Also, it adds a new remote
+//    to the git repository. We already have an origin remote, that points to the github repository. Now, we
+//    will get a heroku remote that points to the heroku repository. When we deploy to the heroku repository,
+//    heroku sees that, it sees the changes, and it deploys them to the web.
+// 16.We still need to push the code up to heroku. We do this by running: git push heroku. We see the logs
+//    as the code deploys.
+// 17.We now have a URL we can visit. The URL shows up at the end of the above command execution.

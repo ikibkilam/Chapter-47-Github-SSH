@@ -10,8 +10,8 @@ const hbs = require('hbs');
 // Load file module.
 const fs = require('fs');
 
-// Set variables
-// Set environment variable.
+// Define environment variables.
+// Define environment variable for port.
 const port = process.env.PORT || 3000;
 
 // 2. Start express.
@@ -48,12 +48,12 @@ app.use((req, resp, next) => {
     next();
 });
 // Middleware to enable maintenance. This ought to be commented out, if we are not in maintenance.
-app.use((req, resp, next) => {
-    resp.render('maintenance.hbs', {
-        maintMsg: 'Server is down for maintenance',
-        maintReturn: 'We will be back at 2 AM PST'
-    });
-});
+// app.use((req, resp, next) => {
+//     resp.render('maintenance.hbs', {
+//         maintMsg: 'Server is down for maintenance',
+//         maintReturn: 'We will be back at 2 AM PST'
+//     });
+// });
 // Serve up static web page, using bulit-in middleware.
 app.use(express.static(__dirname + '/public'));
 
