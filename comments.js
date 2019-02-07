@@ -54,6 +54,7 @@
 // 9. We do not need to touch the SSH keys again!
 
 // Chapter 48 - Heroku.
+
 // 1. I created an account on Heroku.
 // 2. I went to toolbelt.heroku.com and installed the heroku tools.
 // 3. After installation, in git bash console, I ran: heroku --version.
@@ -102,3 +103,44 @@
 // 16.We still need to push the code up to heroku. We do this by running: git push heroku. We see the logs
 //    as the code deploys.
 // 17.We now have a URL we can visit. The URL shows up at the end of the above command execution.
+
+// Summary
+
+// Use git bash console. 
+
+// To install git repository
+// 1. Go to the folder we want to install the respository in. In git bash the command is: cd 'name of folder'.
+//    Note, the name of the folder has to be in ''.
+// 2. Once in the correct folder, run, git init.
+
+// To add files/folders to git the first time
+// 1. Create .gitignore file in root folder of project, and add node_modules/, package-lock.json to this file.
+// 2. 'git add .'.
+// 3. git status.
+// 4. git commit -m 'Init Commit'.
+
+// To commit changes to git after files have changed
+// 1. git status, to check which files have changed.
+// 2. git add . (for all changed files), or, git add file (for a specific file), or, git add folder/ (for a folder).
+// 3. git commit -m 'message', to commit changes to local repository.
+
+// Make a new repo on github - go to github.com
+// 1. Login
+// 2. Click on 'create new repository'.
+// 3. Fill in details.
+// 4. git remote add origin https://github.com/ikibkilam/TodoAppAPI.git
+// 5. git push -u origin master
+
+// To synchronize changes in git to github, after changes have been made
+// 1. git push, to update the remote repository with my local changes. Note, if there is only one remote repository,
+//    then we need only say 'git push', since the default remote repository is origin. If there is more than one 
+//    remote, then we need to specify this remote repository.
+
+// To push the changes to heroku - note we still use the bash console.
+// 1. git push heroku.
+
+// To create a new application in heroku and a new remote to the local git repository
+// 1. git create.
+
+// To run app on heroku
+// 1. heroku open, in bash console, or go to heroku site and launch from dashboard.
